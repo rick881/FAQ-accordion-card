@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*,::after,::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*  #### Text ###*/
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    
+    /*Background gradient*/
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+    
+    /*#### Text*/
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /*#### Dividers*/
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    background: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+}
+
+
+main {
+    background-color: #fff;
+    padding: 2rem 4rem;
+    border-radius: 1.5rem;
+    position: relative;
+    
+}
+.wrap {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 400px auto;
+    gap: 2rem;
+    
+}
+
+
+.image-wrapper  {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.woman {
+    max-width: 400px;
+    height: auto;
+    /* position: absolute;
+    left: -9rem; */
+}
+.box {
+    z-index: 5;
+    position: absolute;
+    left: -.9rem;
+    top: 9rem;
+}
+.icon {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+
+.questions .title {
+   font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+article {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--Light-grayish-blue); 
+}
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem; 
+}
+.accordion-header img {
+    transition: transform .3s ease-in-out;
+} 
+.active.accordion-header img {
+    transform: rotate(180deg);
+}
+.active .faq {
+    font-weight: 700;
+}
+.accordion-header:hover {
+    color: var(--Soft-red);
+    cursor: pointer;
+}
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: height 0.8s ease-in-out;
+}
+.active .accordion-body {
+    height: auto;    
+}
+.accordion-body-content {
+    padding-bottom: 1rem;
+    transition: height 0.5s ease-in-out;
+}
+
+.attribution { 
+    text-align: center;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 768px){
+    .wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 1rem;
+        max-width: 450px;
+        padding: 1rem 2rem;
+    }
+    .questions .title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 4rem auto 1.5rem;
+    }
+    .image-wrapper {
+        position: relative;
+        display: grid;
+        place-items: center;
+        /* background: url(/images/illustration-woman-online-mobile.svg); */
+    }
+    img.woman{
+        width: 80%;
+        position: absolute;
+        top: -9.9rem;
+        left: 10%;
+        transform: rotate(-1deg);
+    }
+    .box{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+    .wrap {
+        max-width: 350px;
+        padding: 1rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .image-wrapper {
+        display: grid;
+        place-items: center;
+    }
+    img.woman {
+        width: 80%;
+        position: absolute;
+        top: -8.4rem;
+        left: 10%;  
+        transform: rotate(-1deg);  
+    }
+   
+}
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .wrap {
+        max-width: 320px;
+        padding: .8rem;
+    }
+    .title {
+        font-size: 1.5rem;
+        margin-top: 3rem;
+    }
+    img.woman{
+        width: 80%;
+        position: absolute;
+        top: -7.5rem;
+        left: 10%;
+    }
+}
